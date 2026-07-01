@@ -1,0 +1,41 @@
+{
+	"name": "@crazygl/hero-calm-cloud-interface",
+	"version": "0.1.0",
+	"description": "Calm Cloud Interface — a SaaS dashboard floats among soft volumetric cloud sprites under a friendly cream-and-sky-blue sky. Pointer drift parallaxes the camera and the cloud layers.",
+	"type": "module",
+	"main": "./dist/index.js",
+	"module": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js"
+		},
+		"./metadata.json": "./metadata.json",
+		"./style.css": "./style.css"
+	},
+	"files": [
+		"dist",
+		"metadata.json",
+		"style.css",
+		"LICENSE"
+	],
+	"dependencies": {
+		"@crazygl/core": "^0.1.0",
+		"three": "^0.160.0"
+	},
+	"peerDependencies": {
+		"react": ">=18",
+		"react-dom": ">=18"
+	},
+	"license": "Apache-2.0",
+	"author": "ybouane",
+	"homepage": "https://crazygl.com/hero/calm-cloud-interface",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/crazygl-com/hero-calm-cloud-interface.git"
+	},
+	"publishConfig": {
+		"access": "public"
+	}
+}

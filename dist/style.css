@@ -1,0 +1,26 @@
+crazygl-hero[data-crazygl="calm-cloud-interface"] {
+	canvas.crazygl-cloud-canvas {
+		display: block;
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	.crazygl-cloud-content {
+		max-width: min(520px, 46vw);
+		color: #1a2230;
+
+		crazygl-heading,
+		h1 {
+			color: #14202e;
+			text-shadow: 0 1px 0 rgba(255, 255, 255, 0.55);
+			letter-spacing: -0.01em;
+		}
+
+		crazygl-subheading,
+		p {
+			color: rgba(20, 32, 46, 0.78);
+		}
+	}
+}

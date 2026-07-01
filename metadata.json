@@ -1,0 +1,299 @@
+{
+	"name": "Calm Cloud Interface",
+	"slug": "calm-cloud-interface",
+	"version": 1,
+	"description": "A SaaS dashboard floats among soft cloud sprites under a friendly cream-to-sky-blue sky. Pointer drift parallaxes both the camera and the layered clouds for a light, approachable, effortless mood.",
+	"dependencies": [
+		"three"
+	],
+	"authorName": "@ybouane",
+	"authorUrl": "https://x.com/ybouane",
+	"tags": [
+		"3d",
+		"clouds",
+		"sky",
+		"saas",
+		"dashboard",
+		"calm",
+		"three",
+		"screenshot"
+	],
+	"category": "Product",
+	"featured": false,
+	"poster": "/images/heroes/calm-cloud-interface.png",
+	"install": {
+		"package": "@crazygl/hero-calm-cloud-interface"
+	},
+	"config": {
+		"managedWidth": true,
+		"innerWidth": 1080,
+		"managedHeight": true,
+		"defaultHeight": 760,
+		"styleInheritance": "none",
+		"usesCanvas": true,
+		"usesWebGL": true,
+		"usesThree": true,
+		"pointerTracking": true,
+		"resizeTracking": true,
+		"interactive": true,
+		"supportsImages": true,
+		"supportsTransparency": true,
+		"supportsFontCustomization": true,
+		"interactivityModes": [
+			"pointer",
+			"none"
+		],
+		"interactivity": "pointer"
+	},
+	"customizer": {
+		"sections": [
+			{
+				"label": "Content",
+				"fields": [
+					{
+						"id": "contentType",
+						"label": "Content Type",
+						"type": "select",
+						"default": "heading",
+						"options": [
+							{
+								"label": "Heading",
+								"value": "heading"
+							},
+							{
+								"label": "Two Columns",
+								"value": "two-columns"
+							},
+							{
+								"label": "Custom",
+								"value": "custom"
+							}
+						]
+					},
+					{
+						"id": "heading",
+						"label": "Heading",
+						"type": "text",
+						"default": "Work, lighter.",
+						"showWhen": {
+							"contentType": "heading"
+						}
+					},
+					{
+						"id": "subheading",
+						"label": "Subheading",
+						"type": "textarea",
+						"default": "A calmer place to manage your team, your day, and everything in between. No more clutter, no more friction.",
+						"showWhen": {
+							"contentType": "heading"
+						}
+					},
+					{
+						"id": "column1",
+						"label": "Column 1",
+						"type": "node",
+						"default": "<h2>Built to breathe</h2><p>A workspace that doesn't pile up. Just what you need, when you need it.</p>",
+						"showWhen": {
+							"contentType": "two-columns"
+						}
+					},
+					{
+						"id": "column2",
+						"label": "Column 2",
+						"type": "node",
+						"default": "<h2>Made for everyone</h2><p>From HR to classrooms \u2014 friendly defaults that just feel right.</p>",
+						"showWhen": {
+							"contentType": "two-columns"
+						}
+					},
+					{
+						"id": "content",
+						"label": "Content",
+						"type": "node",
+						"default": "<h1>Above the noise.</h1>",
+						"showWhen": {
+							"contentType": "custom"
+						}
+					}
+				]
+			},
+			{
+				"label": "Screen",
+				"fields": [
+					{
+						"id": "screenshot",
+						"label": "Screenshot",
+						"type": "media",
+						"default": "https://crazygl.com/samples/screenshot-dashboard-light.avif",
+						"description": "Any dashboard / app PNG, JPG, WebP, or AVIF. The screen plane derives its aspect from the loaded image."
+					},
+					{
+						"id": "screenshotScale",
+						"label": "Screen size",
+						"type": "slider",
+						"default": 1,
+						"min": 0.5,
+						"max": 1.8,
+						"step": 0.05,
+						"description": "Overall scale of the screenshot plane in the scene."
+					},
+					{
+						"id": "screenshotX",
+						"label": "Screen offset X",
+						"type": "slider",
+						"default": 0,
+						"min": -2,
+						"max": 2,
+						"step": 0.05,
+						"unit": "world",
+						"description": "Nudges the screenshot along the world X axis. Default 0 is centred."
+					},
+					{
+						"id": "screenshotY",
+						"label": "Screen offset Y",
+						"type": "slider",
+						"default": 0,
+						"min": -2,
+						"max": 2,
+						"step": 0.05,
+						"unit": "world",
+						"description": "Nudges the screenshot along the world Y axis. Default 0 is centred."
+					},
+					{
+						"id": "screenshotTilt",
+						"label": "Screen tilt",
+						"type": "slider",
+						"default": -4,
+						"min": -45,
+						"max": 45,
+						"step": 0.5,
+						"unit": "\u00b0",
+						"description": "Pitch on the screenshot plane. Slightly negative tips the top toward the camera for a gentle product pose."
+					}
+				]
+			},
+			{
+				"label": "Clouds",
+				"fields": [
+					{
+						"id": "cloudCount",
+						"label": "Cloud count",
+						"type": "slider",
+						"default": 8,
+						"min": 4,
+						"max": 14,
+						"step": 1,
+						"description": "Number of cloud sprites stacked at varying depths from z = -8 (back) to z = -2 (close)."
+					},
+					{
+						"id": "cloudColor",
+						"label": "Cloud color",
+						"type": "color",
+						"default": "#ffffff",
+						"description": "Tint of the soft cloud puffs. Default soft white reads as gentle midday cumulus."
+					},
+					{
+						"id": "cloudOpacity",
+						"label": "Cloud opacity",
+						"type": "slider",
+						"default": 0.7,
+						"min": 0,
+						"max": 1,
+						"step": 0.02,
+						"description": "Max alpha of each cloud sprite. 0.7 reads as soft cumulus; toward 1 reads as denser fog banks."
+					},
+					{
+						"id": "cloudDriftSpeed",
+						"label": "Cloud drift speed",
+						"type": "slider",
+						"default": 0.5,
+						"min": 0,
+						"max": 1,
+						"step": 0.02,
+						"description": "Base leftward drift over the long cycle. 0 freezes the layer for a still hero."
+					},
+					{
+						"id": "cloudSpeed",
+						"label": "Cloud speed multiplier",
+						"type": "slider",
+						"default": 1.5,
+						"min": 0,
+						"max": 5,
+						"step": 0.05,
+						"description": "Overall speed multiplier on top of cloud drift. 1 is the base motion, 1.5 (default) is a brisker daylight breeze, 5 is a fast time-lapse."
+					}
+				]
+			},
+			{
+				"label": "Sky",
+				"fields": [
+					{
+						"id": "skyTop",
+						"label": "Sky top color",
+						"type": "color",
+						"default": "#b8d8f5",
+						"description": "Soft blue at the top of the sky gradient."
+					},
+					{
+						"id": "skyBottom",
+						"label": "Sky bottom color",
+						"type": "color",
+						"default": "#fff5e8",
+						"description": "Cream warmth toward the horizon."
+					}
+				]
+			},
+			{
+				"label": "Motion",
+				"fields": [
+					{
+						"id": "pointerCameraDrift",
+						"label": "Pointer camera drift",
+						"type": "slider",
+						"default": 0.7,
+						"min": 0,
+						"max": 1.5,
+						"step": 0.02,
+						"description": "How far the pointer pushes the camera in X and Y. 0.7 reads as a gentle look-around; 0 freezes the camera."
+					},
+					{
+						"id": "pointerParallax",
+						"label": "Cloud parallax",
+						"type": "slider",
+						"default": 0.4,
+						"min": 0,
+						"max": 1,
+						"step": 0.02,
+						"description": "Pointer parallax on the cloud layers. Deeper clouds shift less than closer ones for a real depth feel."
+					}
+				]
+			},
+			{
+				"label": "Background",
+				"fields": [
+					{
+						"id": "transparentBackground",
+						"label": "Transparent background",
+						"type": "toggle",
+						"default": false,
+						"description": "Drop the sky so the dashboard composites over your existing page background."
+					}
+				]
+			},
+			{
+				"label": "Typography",
+				"fields": [
+					{
+						"id": "headingFontFamily",
+						"label": "Heading Font",
+						"type": "font",
+						"default": "Inherit",
+						"showWhen": {
+							"contentType": "heading"
+						}
+					}
+				]
+			}
+		]
+	}
+}
