@@ -3,7 +3,7 @@ name: calm-cloud-interface
 description: "A SaaS dashboard floats among soft cloud sprites under a friendly cream-to-sky-blue sky. Pointer drift parallaxes both the camera and the layered clouds for a light, approachable, effortless mood."
 metadata:
   author: "@ybouane"
-  version: "0.1.0"
+  version: "0.1.1"
 ---
 
 ## How To Use This Skill
